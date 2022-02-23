@@ -3,6 +3,9 @@ const connect = require("./config/db");
 const app = express();
 app.use(express.json());
 
+const electronicsControllers = require("./controllers/electronics.controllers");
+
+app.use("/electronics", electronicsControllers);
 
 const PORT = 4101;
 app.listen(PORT, async(req,res)=>{
