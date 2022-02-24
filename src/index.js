@@ -11,8 +11,8 @@ const { register, login } = require("./controllers/auth.controller");
 
 const userController = require('./controllers/user.controller');
 
-app.get("/register", register);
-app.get("/login", login);
+app.post("/register", register);
+app.post("/login", login);
 
 passport.serializeUser(function (user, done) {
   done(null, user);
@@ -35,6 +35,7 @@ app.get('/auth/google/callback',
     failureRedirect: '/auth/google/failure'
   }));
 
+app.use("/users", userController);
 app.use("/electronics", electronicsControllers);
 
 const PORT = 4101;

@@ -4,7 +4,7 @@ const router = express.Router();
 
 const get = require("./controller-function");
 
-const  {ActionAndSportsCamera,ActionAndSportsCameraAcessory,BabyAndPetMonitor,Backgrounds} = require("../models/electronics.model");
+const { ActionAndSportsCamera, ActionAndSportsCameraAcessory, BabyAndPetMonitor, Backgrounds } = require("../models/electronics.model");
 
 
 
