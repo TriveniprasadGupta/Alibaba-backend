@@ -6,13 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 
-<<<<<<< Updated upstream
-app.use(cors());
-
-const passport = require("./config/google-oauth");
-=======
 // const passport = require("./config/google-oauth");
->>>>>>> Stashed changes
 
 const electronicsControllers = require("./controllers/electronics.controllers");
 const apparelsControllers = require("./controllers/apparels.controllers");
