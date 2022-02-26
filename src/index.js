@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const connect = require("./config/db");
 const { body } = require('express-validator');
@@ -56,8 +57,8 @@ app.get('/auth/google/callback',
 app.use("/users", userController);
 app.use("/electronics", electronicsControllers);
 
-const PORT = 4101;
-app.listen(PORT, async (req, res) => {
+const PORT = process.env.PORT || 4101;
+app.listen(PORT, async () => {
   try {
     await connect();
     console.log(`Listening on port ${PORT}`);
