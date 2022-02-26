@@ -5,11 +5,16 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 
+<<<<<<< Updated upstream
 app.use(cors());
 
 const passport = require("./config/google-oauth");
+=======
+// const passport = require("./config/google-oauth");
+>>>>>>> Stashed changes
 
 const electronicsControllers = require("./controllers/electronics.controllers");
+const apparelsControllers = require("./controllers/apparels.controllers");
 
 const { register, login } = require("./controllers/auth.controller");
 
@@ -32,29 +37,30 @@ app.post("/register",
   register);
 app.post("/login", login);
 
-passport.serializeUser(function (user, done) {
-  done(null, user);
-});
+// passport.serializeUser(function (user, done) {
+//   done(null, user);
+// });
 
-passport.deserializeUser(function (user, done) {
-  done(null, user);
-});
+// passport.deserializeUser(function (user, done) {
+//   done(null, user);
+// });
 
-app.get('/auth/google',
-  passport.authenticate('google', {
-    scope:
-      ['email', 'profile']
-  }
-  ));
+// app.get('/auth/google',
+//   passport.authenticate('google', {
+//     scope:
+//       ['email', 'profile']
+//   }
+//   ));
 
-app.get('/auth/google/callback',
-  passport.authenticate('google', {
-    // successRedirect: '/auth/google/success',
-    failureRedirect: '/auth/google/failure'
-  }));
+// app.get('/auth/google/callback',
+//   passport.authenticate('google', {
+//     // successRedirect: '/auth/google/success',
+//     failureRedirect: '/auth/google/failure'
+//   }));
 
 app.use("/users", userController);
 app.use("/electronics", electronicsControllers);
+app.use("/apparels", apparelsControllers);
 
 const PORT = 4101;
 app.listen(PORT, async (req, res) => {
