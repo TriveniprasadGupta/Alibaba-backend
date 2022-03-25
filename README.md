@@ -1,6 +1,6 @@
 # Alibaba.com Clone
 
-![Gap](https://github.com/Reshma-fw14/gap.com-backend/blob/main/public/gap%20images/gap1.png)
+![Alibaba](https://triveniprasadgupta-portfolio.netlify.app/images/alibaba_snap1.png)
 
 # Welcome :wave:
 
